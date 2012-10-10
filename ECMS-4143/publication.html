@@ -112,7 +112,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>echo </td>
+	<td>echo</td>
 	<td>-- Wait for HTML content button</td>
 	<td></td>
 </tr>
@@ -172,6 +172,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>echo</td>
+	<td>--Type Content</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>css=textarea.cke_source.cke_enable_context_menu</td>
 	<td>toto</td>
@@ -184,6 +189,11 @@
 <tr>
 	<td>click</td>
 	<td>link=Save &amp; Close</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>--Publish content</td>
 	<td></td>
 </tr>
 <tr>
@@ -219,6 +229,11 @@
 <tr>
 	<td>click</td>
 	<td>link=Save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>--Edit HTML content</td>
 	<td></td>
 </tr>
 <tr>
@@ -262,23 +277,18 @@
 	<td></td>
 </tr>
 <tr>
+	<td>echo</td>
+	<td>--Save and Publish again</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@title='Publications']</td>
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>1000</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>//a[@title='Publications']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>pause</td>
-	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
@@ -287,23 +297,38 @@
 	<td></td>
 </tr>
 <tr>
+	<td>echo</td>
+	<td>--Change status to Pending</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>//a[@class='ActiveStatus' and contains(text(),'Pending') ]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Pending')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
 	<td>//a[@class='CurrentStatus' and contains(text(),'Pending')]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementPresent</td>
-	<td>//a[@class='CurrentStatus' and contains(text(),'Pending')]</td>
+	<td>echo</td>
+	<td>--Verify Current Status is Pending OK</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@class='ActiveStatus' and contains(text(),'Approved') ]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>--Change status to Approved</td>
 	<td></td>
 </tr>
 <tr>
@@ -313,12 +338,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Approved')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
 	<td>//a[@class='CurrentStatus' and contains(text(),'Approved')]</td>
 	<td></td>
 </tr>
 <tr>
+	<td>echo</td>
+	<td>--Verify Current Status is Approved OK</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@class='ActiveStatus' and contains(text(),'Staged') ]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>--Change status to Staged</td>
 	<td></td>
 </tr>
 <tr>
@@ -328,12 +368,27 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Staged')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
 	<td>//a[@class='CurrentStatus' and contains(text(),'Staged')]</td>
 	<td></td>
 </tr>
 <tr>
+	<td>echo</td>
+	<td>--Verify Current Status Staged OK</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>//a[@class='ActiveStatus' and contains(text(),'Published') ]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>--Change status to Published</td>
 	<td></td>
 </tr>
 <tr>
@@ -343,7 +398,17 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
+	<td>//a[contains(text(),'Published')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
 	<td>//a[@class='CurrentStatus' and contains(text(),'Published')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>--Verify Current Status is Published</td>
 	<td></td>
 </tr>
 <tr>
